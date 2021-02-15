@@ -1,0 +1,201 @@
+.portfolio-page{
+    header{
+        background-image:url(../images/portfolio-bg.jpg);
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-size: cover;
+        &::before{
+            background-color: rgba(0, 0, 0, 0.85);
+        }
+    }
+    .portfolio{
+        padding-bottom: 22px;
+    }
+}
+.tab-filter{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.filter-title{
+    display: flex;
+    align-items: center;
+    flex: 160px 0 0;
+    height:58px;
+    border-right: 1px solid #ebebeb;
+    p{
+        display: inline-block;
+        position: relative;
+        line-height: 1;
+        margin: 0;
+        font-family: "Lato";
+        font-size: 24px;
+        font-weight: 900;
+        color: #404040;
+    }
+}
+.filter-toggle{
+    display: none;
+}
+.filter-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .filter-item{
+        position: relative;
+        display: block;
+        height: 58px;
+        line-height: 58px;
+        margin: 0 25px;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        a{
+            text-decoration: none;
+            color: #404040;
+        }
+        &::after{
+            content: '';
+            left: 50%;
+            bottom: -12px;
+            position: absolute;
+            display: block;
+            width:0;
+            height: 3px;
+            background-color: $red;
+            transition: all .3s ease-in-out;
+        }
+        &:hover,
+        &.active{
+            &::after{
+                width: 100%;
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+}
+@media screen and(max-width:1200px){
+    .filter-list{
+        .filter-item{
+            margin: 0px 18px;
+        }
+    }
+}
+@media screen and(max-width:1023px){
+    .page{
+        .section-header{
+            padding-top: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ebebeb;
+            .container{
+                flex-flow: row;
+            }
+        }
+    }
+    .filter-title{
+        width: 160px;
+        flex: 160px 0 0;
+    }
+    .filter-toggle{
+        position: relative;
+        text-align: left;
+        text-transform: uppercase;
+        width: 100%;
+        background: #f6f6f6;
+        border: 1px solid #e4e4e6;
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        padding: 0 10px;
+        display: block;
+        cursor: pointer;
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        font-weight: bold;
+        &.active{
+            &::after{
+                transform: rotate(180deg);
+            }
+        }
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 0;
+            width: 50px;
+            height: 30px;
+            border-left: 1px solid #e4e4e6;
+            font-size: 22px;
+            text-align: center;
+            background-image: url(../images/icon-sprite.png);
+            background-repeat: no-repeat;
+            background-position-y: -342px;
+            background-position-x: 50%;
+        }
+    }
+    .tab-filter{
+        margin: 0 15px;
+        position: relative;
+        width: 100%;
+    }
+    .filter-list{
+        display: block;
+    }
+    .filter-list{
+        text-align: left;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        border: 1px solid #e4e4e6;
+        border-top: none;
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 51px;
+        left: 0;
+        z-index: 100;
+        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+        .filter-item{
+            margin: 0;
+            padding: 0 10px;
+            height: auto;
+            &.active{
+                cursor: default;
+                pointer-events: none;
+                background: #f6f6f6;
+            }
+            &.active,
+            &:hover{
+                &::after{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:649px){
+    .filter-title{
+        display: block;
+        height: auto;
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+        border: none;
+    }
+    .tab-filter{
+        margin:20px 0;
+    }
+}

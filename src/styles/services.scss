@@ -1,0 +1,208 @@
+.service-section{
+    @extend .contact;
+    padding-bottom: 60px;
+    .section-inner{
+        @extend .contact-form;
+        padding-left: 15px;
+        position: relative;
+    }
+}
+.service-list{
+    list-style: none;
+    margin: 0;
+    margin-top: 93px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #dcdcdc;
+    li{
+        padding-right: 19px;
+        padding-left: 19px;
+        width: 28.74359%;
+        min-height: 175px;
+        position: relative;
+        padding-bottom: 20px;
+        text-align: center;
+        cursor: pointer;
+        color: #222222;
+        h3{
+            font-size: 16px;
+            font-weight: 900;
+            line-height: normal;
+            letter-spacing: normal;
+        }
+        .service-icon{
+            display: block;
+            margin: 21px auto;
+            line-height: 0;
+            svg{
+                transition: fill .4s ease-in-out;
+            }
+        }
+        .service-title{
+            transition: color .4s ease-in-out;
+        }
+        &::after{
+            width: 0;
+            left: 50%;
+            display: block;
+            transition: all .3s ease-in-out;
+            content: ' ';
+            position: absolute;
+            height: 3px;
+            bottom: 0;
+            background-color: $red;
+        }
+        &.active,
+        &:hover{
+            color: #930037;
+            svg{
+                fill:$red;
+            }
+            &::after{
+                width: 100%;
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+}
+
+.tab-header-toggle{
+    display: none;
+    margin-top: 40px;
+    padding-right: 19px;
+    padding-left: 19px;
+    width: 100%;
+    min-height: 160px;
+    position: relative;
+    padding-bottom: 24px;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #222222;
+    cursor: pointer;
+    border-bottom: 3px solid #222222;
+    .service-icon{
+        display: block;
+        margin: 21px auto;
+        line-height: 0;
+        svg{
+            transition: fill .4s ease-in-out;
+        }
+    }
+    h3{
+        display: block;
+        width: 27.74359%;
+        margin: 0 auto;
+        transition: color .4s ease-in-out;
+    }
+    &.active{
+        color: #930037;
+        border-bottom-color: $red;
+        svg{
+            fill:$red;
+        }
+    }
+}
+
+.tab-content{
+    padding: 10px 0;
+    .tab-content-item{
+        display: none;
+        &.active{
+            display: block;
+        }
+    }
+    .service-type{
+        width: 645px;
+        margin-top: 58px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    p{
+        padding-right: 60px;
+        font-size: 18px;
+        line-height: 1.33;
+        letter-spacing: normal;
+        color: #3d3d3d;
+    }
+    .service-type-item{
+        max-width: 33.33333333%;
+        margin-left: 18px;
+        margin-right: 18px;
+        margin-bottom: 52px;
+        text-align: center;
+        .h3{
+            margin-top: 12px;
+            font-size: 18px;
+            line-height: 1.33;
+            letter-spacing: normal;
+            color: #3d3d3d;
+        }
+    }
+}
+
+@media screen and(max-width:1199px){
+    .service-list{
+        li{
+            width: 29.74359%;
+        }
+    }
+}
+
+@media screen and(max-width:1023px){
+    .tab-content{
+        padding: 44px 69px;
+        .service-type-item{
+            width: 50%;
+            margin: 20px 0;
+            max-width: 50%;
+        }
+    }
+    .tab-header-toggle{
+        h3{
+            width: 35%;
+        }
+    }
+    .tab-content-item{
+        padding: 45px;
+        background-color: #f9f9f9;
+        p{
+            padding: 0;
+            text-align: center;
+        }
+        .service-type{
+            width: 100%;
+        }
+    }
+}
+@media screen and(max-width:720px){
+    .tab-header-toggle{
+        h3{
+            width: auto;
+        }
+    }
+}
+
+@media screen and(max-width:649px){
+    .tab-content{
+        padding: 30px 0;
+    }
+    .tab-header-toggle{
+        .h3{
+            width: 100%;
+        }
+    }
+    .service-section{
+        .section-inner{
+            padding: 30px 15px;
+        }
+    }
+    .tab-content-item{
+        padding: 15px;
+    }
+}

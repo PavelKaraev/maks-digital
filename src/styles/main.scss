@@ -1,0 +1,19 @@
+// Переопределение дефолтных значений переменных Bootstrap 4 и определение своих
+@import "variables";
+// Подключение нужных SCSS исходников Bootstrap 4
+@import "../../node_modules/normalize.css/normalize.css";
+@import "../../node_modules/slick-carousel/slick/slick.css";
+@import "../../node_modules/animate.css/animate.css";
+@import "https://use.fontawesome.com/releases/v5.8.2/css/all.css";
+// Подключение своих SCSS файлов
+@import "styles";
+@import "tabs";
+@import "pages";
+@import "blog";
+@import "sidebar";
+@import "contact";
+@import "about";
+@import "services";
+@import "login";
+@import "blog-details";
+@import "media";
